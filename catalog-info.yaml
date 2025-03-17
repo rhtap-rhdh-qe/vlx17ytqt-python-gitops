@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vlx17ytqt-python-gitops
+  description: This is GitOps manifest for vlx17ytqt-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vlx17ytqt-python
+    backstage.io/kubernetes-id: vlx17ytqt-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: vlx17ytqt-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vlx17ytqt-python

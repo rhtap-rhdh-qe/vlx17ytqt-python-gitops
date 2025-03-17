@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: vlx17ytqt-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: vlx17ytqt-python 
+  name: vlx17ytqt-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: vlx17ytqt-python
+    weight: 100 
